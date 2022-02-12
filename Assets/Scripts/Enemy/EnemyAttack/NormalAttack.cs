@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GunScripts;
+using UnityEngine;
 
 namespace Enemy
 {
@@ -8,7 +9,7 @@ namespace Enemy
         {
             GameObject player = enemyAttackInformation.playerObject;
             EnemyProperties enemyProperties = enemyAttackInformation.enemyProperties;
-            player.GetComponent<PlayerProperties>().health -= enemyProperties.damage;
+            player.transform.GetChild(0).GetComponent<Gun>().gunHealth -= enemyProperties.damage;
         }
     }
 }

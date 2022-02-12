@@ -8,6 +8,8 @@ TagManager:
   - Gun
   - Border
   - GunProjectile
+  - NormalEnemy
+  - Panda
   layers:
   - Default
   - TransparentFX
