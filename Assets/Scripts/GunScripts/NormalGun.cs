@@ -2,7 +2,7 @@
 
 namespace GunScripts
 {
-    public class NormalGun : GunState
+    public class NormalGun : IGunState
     {
         public static Object prefab = Resources.Load("Prefabs/NormalProjectilePrefab");
         
@@ -14,7 +14,6 @@ namespace GunScripts
 
         private void Shoot(GunInformation gunInformation, MouseClickInformation mouseClickInformation)
         {
-            Debug.Log(mouseClickInformation.mouseVector);
             GameObject NormalGunProjectile = GameObject.Instantiate(prefab, gunInformation.GunTransform) as GameObject;
             NormalGunProjectile.GetComponent<NormalGunProjectile>().GunInformation = gunInformation;
             Vector2 shootingVector = mouseClickInformation.GetPlayerMouseDistance();

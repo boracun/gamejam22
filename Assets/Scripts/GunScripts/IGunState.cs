@@ -1,7 +1,7 @@
 ﻿
 namespace GunScripts
 {
-    public interface GunState
+    public interface IGunState
     {
         public void StateTrigger(GunInformation gunInformation, MouseClickInformation mouseClickInformation);
     }

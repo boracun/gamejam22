@@ -689,8 +689,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunDamage: 0
-  gunFireRate: 0
-  bulletSpeed: 0
+  gunFireRate: 120
+  bulletSpeed: 700
   camera: {fileID: 519420031}
 --- !u!1 &1857316943
 GameObject:

@@ -9,7 +9,7 @@ namespace GunScripts
         public float gunFireRate;
         public float bulletSpeed;
     
-        public GunState GunState;
+        public IGunState GunState;
         public Camera camera;
 
         private bool fired = false;
