@@ -10,6 +10,7 @@ TagManager:
   - GunProjectile
   - NormalEnemy
   - Panda
+  - Enemy
   layers:
   - Default
   - TransparentFX

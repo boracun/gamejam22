@@ -9,7 +9,8 @@ namespace GameManagement
     
     public class EnemySpawnManager : MonoBehaviour
     {
-        public static float playerSpawnRange = 5f;
+        public static System.Random random = new System.Random();
+        public static float playerSpawnRange = 2f;
         public float spawnUpperLimit;
         public float spawnLowerLimit;
 
@@ -23,11 +24,27 @@ namespace GameManagement
 
         private void Update()
         {
+            List<int> removedKeys = new List<int>();
+            
             foreach (KeyValuePair<int, SpawnEvent> keyValuePair in SpawnEventList)
             {
                 int spawnEventKey = keyValuePair.Key;
                 SpawnEventList[spawnEventKey].spawnInfo.spawnBehavior.Spawn(spawnEventKey);
             }
+            foreach (KeyValuePair<int, SpawnEvent> keyValuePair in SpawnEventList)
+            {
+                int spawnEventKey = keyValuePair.Key;
+                if (SpawnEventList[spawnEventKey].spawnTimer >= SpawnEventList[spawnEventKey].spawnDelay)
+                {
+                    removedKeys.Add(spawnEventKey);
+                }
+            }
+
+            for (int i = 0; i < removedKeys.Count; i++)
+            {
+                SpawnEventList.Remove(removedKeys[i]);
+            }
+            
         }
 
         public static void SpawnEnemies(SpawnInfo[] spawnInfoArr)
@@ -48,7 +65,7 @@ namespace GameManagement
             switch (enemyType)
             {
                 case EnemyType.NormalEnemy:
-                    result = Resources.Load("Prefabs/NormalEnemyPrefab") as GameObject;
+                    result = Resources.Load("Prefabs/Owlet_Monster") as GameObject;
                     break;
             }
 

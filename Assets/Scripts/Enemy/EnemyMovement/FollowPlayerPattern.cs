@@ -11,7 +11,7 @@ namespace Enemy
             Vector3 playerVector = player.transform.position;
             Vector2 followVector = (playerVector - enemyMovementInformation.enemyTransform.position).normalized;
             Rigidbody2D enemyRigidbody2D = enemyMovementInformation.enemyRigidbody2D;
-            enemyRigidbody2D.AddForce(followVector * enemyMovementInformation.enemySpeed);
+            enemyRigidbody2D.velocity = followVector * enemyMovementInformation.enemySpeed;
         }
     }
 }

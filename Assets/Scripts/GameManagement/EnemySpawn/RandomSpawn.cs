@@ -6,7 +6,7 @@ namespace GameManagement
 {
     public class RandomSpawn : ISpawnBehavior
     {
-        private bool eventFinalized;
+        private bool eventFinalized = false;
         
         public void Spawn(int spawnEventKey)
         {
@@ -26,28 +26,26 @@ namespace GameManagement
                 
                 GameObject enemy = GameObject.Instantiate(EnemySpawnManager.GetPrefab(spawnEvent.spawnInfo.enemyType), 
                     spawnEvent.spawnLocation, Quaternion.identity);
-
-                EnemySpawnManager.SpawnEventList.Remove(spawnEventKey);
             }
         }
 
         public static void ChooseRandomSpawnPoint(ref SpawnEvent spawnEvent)
         {
-            float topBorderYPos = GameObject.Find("TopBorder").transform.position.y;
-            float bottomBorderYPos = GameObject.Find("BottomBorder").transform.position.y;
+            float topBorderYPos = GameObject.Find("TopBorder").transform.position.y - 0.5f;
+            float bottomBorderYPos = GameObject.Find("BottomBorder").transform.position.y + 0.5f;
             
-            float leftBorderXPos = GameObject.Find("LeftBorder").transform.position.x;
-            float rightBorderXPos = GameObject.Find("RightBorder").transform.position.x;
+            float leftBorderXPos = GameObject.Find("LeftBorder").transform.position.x - 0.5f;
+            float rightBorderXPos = GameObject.Find("RightBorder").transform.position.x + 0.5f;
             
-            System.Random random = new System.Random();
             GameObject player = GameObject.Find("Panda");
             
             Vector2 spawnPoint;
             Vector2 playerPos = player.transform.position;
             do
             {
-                double randomY = (random.NextDouble() * (topBorderYPos - bottomBorderYPos) + bottomBorderYPos);
-                double randomX = (random.NextDouble() * (rightBorderXPos - leftBorderXPos) + leftBorderXPos);
+                double randomY = (EnemySpawnManager.random.NextDouble() * (topBorderYPos - bottomBorderYPos) + bottomBorderYPos);
+                double randomX = (EnemySpawnManager.random.NextDouble() * (rightBorderXPos - leftBorderXPos) + leftBorderXPos);
+
                 spawnPoint = new Vector2((float) randomX, (float) randomY);
                 
             } while (  (spawnPoint - playerPos).magnitude <= spawnEvent.spawnPlayerDistance );
@@ -58,8 +56,7 @@ namespace GameManagement
 
         public static void ChooseRandomSpawnTime(ref SpawnEvent spawnEvent)
         {
-            System.Random random = new System.Random();
-            double randomDelay = (random.NextDouble() * (spawnEvent.spawnDelayUpperLimit - spawnEvent.spawnDelayLowerLimit) 
+            double randomDelay = (EnemySpawnManager.random.NextDouble() * (spawnEvent.spawnDelayUpperLimit - spawnEvent.spawnDelayLowerLimit) 
                                   + spawnEvent.spawnDelayLowerLimit);
             spawnEvent.spawnDelay = (float) randomDelay;
         }
