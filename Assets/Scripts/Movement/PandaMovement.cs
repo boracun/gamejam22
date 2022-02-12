@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class PandaMovement : MonoBehaviour
@@ -13,16 +14,8 @@ public class PandaMovement : MonoBehaviour
     void Update()
     {
         float directionX;
-        if (Input.GetKey(KeyCode.A))
-        {
-            directionX = -1f;
-            sr.flipX = true;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            directionX = 1f;
-            sr.flipX = false;
-        }
+        if (Input.GetKey(KeyCode.A)) directionX = -1f;
+        else if (Input.GetKey(KeyCode.D)) directionX = 1f;
         else directionX = 0f;
 
         float directionY;
@@ -31,6 +24,12 @@ public class PandaMovement : MonoBehaviour
         else directionY = 0f;
         
         pandaDirection = new Vector2(directionX, directionY).normalized;
+
+        Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+
+        if (worldPosition.x < transform.position.x) sr.flipX = true;
+        else if (worldPosition.x > transform.position.x) sr.flipX = false;
     }
     
     void FixedUpdate()
