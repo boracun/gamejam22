@@ -1955,7 +1955,7 @@ MonoBehaviour:
   gunHealth: 0
   gunDamage: 50
   gunFireRate: 120
-  bulletSpeed: 700
+  bulletSpeed: 10
   camera: {fileID: 519420031}
 --- !u!1 &1765321682
 GameObject:
