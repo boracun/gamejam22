@@ -12,9 +12,9 @@ public struct MouseClickInformation
         this.mouseVector = mouseVector;
     }
 
-    public Vector3 GetPlayerMouseDistance()
+    public Vector2 GetPlayerMouseDistance()
     {
-        Vector3 distance = mouseVector - playerVector;
+        Vector2 distance = mouseVector - playerVector;
         return distance;
     }
 }

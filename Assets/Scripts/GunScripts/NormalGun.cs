@@ -14,10 +14,12 @@ namespace GunScripts
 
         private void Shoot(GunInformation gunInformation, MouseClickInformation mouseClickInformation)
         {
-            GameObject NormalGunProjectile = GameObject.Instantiate(prefab) as GameObject;
+            Debug.Log(mouseClickInformation.mouseVector);
+            GameObject NormalGunProjectile = GameObject.Instantiate(prefab, gunInformation.GunTransform) as GameObject;
             NormalGunProjectile.GetComponent<NormalGunProjectile>().GunInformation = gunInformation;
             Vector2 shootingVector = mouseClickInformation.GetPlayerMouseDistance();
-            NormalGunProjectile.GetComponent<Rigidbody2D>().velocity = shootingVector * gunInformation.bulletSpeed;
+            NormalGunProjectile.GetComponent<Rigidbody2D>().AddForce(shootingVector.normalized * gunInformation.bulletSpeed);
+
         }
     
     
