@@ -1136,7 +1136,7 @@ GameObject:
   - component: {fileID: 890891529}
   - component: {fileID: 890891528}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: CurrentWeaponPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1801,7 +1801,7 @@ GameObject:
   - component: {fileID: 2046239154}
   - component: {fileID: 2046239153}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: HUDInfoPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1880,7 +1880,7 @@ GameObject:
   - component: {fileID: 2087209852}
   - component: {fileID: 2087209851}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PandaPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
