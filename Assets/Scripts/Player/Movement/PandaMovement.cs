@@ -39,6 +39,23 @@ public class PandaMovement : MonoBehaviour
 
         // animation
         anim.SetBool("Run", directionX != 0 || directionY != 0);
+        
+        if (anim.GetBool("Run"))
+        {
+            var localScale = transform.localScale;
+            localScale.x = 0.37f;
+            localScale.y = 0.37f;
+
+            transform.localScale = localScale;
+        }
+        else
+        {
+            var localScale = transform.localScale;
+            localScale.x = 0.3f;
+            localScale.y = 0.3f;
+
+            transform.localScale = localScale;
+        }
     }
     
     void FixedUpdate()
