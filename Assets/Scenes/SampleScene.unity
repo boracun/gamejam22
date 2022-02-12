@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 831142015}
   - component: {fileID: 831142014}
   - component: {fileID: 831142018}
+  - component: {fileID: 831142019}
   m_Layer: 0
   m_Name: Panda
   m_TagString: Untagged
@@ -645,6 +646,25 @@ CapsuleCollider2D:
   m_Offset: {x: -0.04427433, y: -0.080071285}
   m_Size: {x: 2.0292444, y: 3.163441}
   m_Direction: 0
+--- !u!95 &831142019
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831142013}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 523b6d5da7effe84782709230dff4f7b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1599921330
 GameObject:
   m_ObjectHideFlags: 0
