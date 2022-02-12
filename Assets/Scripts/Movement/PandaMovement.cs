@@ -9,6 +9,12 @@ public class PandaMovement : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer sr;
     private Vector2 pandaDirection;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -30,6 +36,9 @@ public class PandaMovement : MonoBehaviour
 
         if (worldPosition.x < transform.position.x) sr.flipX = true;
         else if (worldPosition.x > transform.position.x) sr.flipX = false;
+
+        // animation
+        anim.SetBool("Run", directionX != 0 || directionY != 0);
     }
     
     void FixedUpdate()
