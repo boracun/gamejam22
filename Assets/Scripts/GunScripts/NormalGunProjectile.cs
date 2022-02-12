@@ -12,14 +12,23 @@ public class NormalGunProjectile : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Enemy"))
+        {
+            other.gameObject.GetComponent<EnemyProperties>().TakeDamage(GunInformation.gunDamage);
+            Destroy(gameObject);
+        }
+
+        if (other.gameObject.tag.Equals("Border"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
     public void Update()
     {
         
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        other.gameObject.GetComponent<EnemyProperties>().TakeDamage(GunInformation.gunDamage);
-        Destroy(gameObject);
-    }
+    
 }
