@@ -3,10 +3,10 @@ using UnityEngine;
 
 public struct MouseClickInformation
 {
-    public Vector3 playerVector;
-    public Vector3 mouseVector;
+    public Vector2 playerVector;
+    public Vector2 mouseVector;
     
-    public MouseClickInformation(Vector3 playerVector, Vector3 mouseVector)
+    public MouseClickInformation(Vector2 playerVector, Vector2 mouseVector)
     {
         this.playerVector = playerVector;
         this.mouseVector = mouseVector;

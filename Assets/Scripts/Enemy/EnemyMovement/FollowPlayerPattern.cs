@@ -8,10 +8,12 @@ namespace Enemy
         public void Move(EnemyMovementInformation enemyMovementInformation)
         {
             GameObject player = GameObject.Find("Panda");
-            Vector3 playerVector = player.transform.position;
-            Vector2 followVector = (playerVector - enemyMovementInformation.enemyTransform.position).normalized;
+            Vector2 playerVector = player.transform.position;
+            Vector2 enemyVector = enemyMovementInformation.enemyTransform.position;
+            Vector2 followVector = (playerVector - enemyVector).normalized;
             Rigidbody2D enemyRigidbody2D = enemyMovementInformation.enemyRigidbody2D;
             enemyRigidbody2D.velocity = followVector * enemyMovementInformation.enemySpeed;
+            Debug.Log(enemyRigidbody2D.velocity.magnitude);
         }
     }
 }
