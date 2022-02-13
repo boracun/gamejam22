@@ -19,13 +19,13 @@ public class EvolutionManager : MonoBehaviour
         {
             HUD.Instance.EnableFPButton();
             HUD.Instance.EnableFRButton();
-            HUD.Instance.ResetEvolutionPoints();
         }
     }
 
     public void EvolveFP()
     {
         HUD.Instance.IncreaseFP(1);
+        HUD.Instance.ResetEvolutionPoints();
         Gun.gunDamage += evolveIncreaseAmount;
         EvolveGun();
     }
@@ -33,6 +33,7 @@ public class EvolutionManager : MonoBehaviour
     public void EvolveFR()
     {
         HUD.Instance.IncreaseFR(1);
+        HUD.Instance.ResetEvolutionPoints();
         Gun.gunFireRate += evolveIncreaseAmount;
         EvolveGun();
     }
