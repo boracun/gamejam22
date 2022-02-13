@@ -60,7 +60,14 @@ public class HUD : MonoBehaviour
 
     public void IncreaseEvolutionPoints(float increaseAmount)
     {
-        _gun.evolutionPoints += increaseAmount;
+        if (_gun.evolutionPoints + increaseAmount <= Gun.MAX_EVOLUTION_POINTS)
+        {
+            _gun.evolutionPoints += increaseAmount;
+        }
+        else
+        {
+            _gun.evolutionPoints = Gun.MAX_EVOLUTION_POINTS;
+        }
         UpdateEvolutionPointsText();
     }
 

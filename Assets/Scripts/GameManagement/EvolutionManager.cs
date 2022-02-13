@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using GunScripts;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -16,6 +16,7 @@ public class EvolutionManager : MonoBehaviour
 
     public Sprite ShotgunSprite;
     public Sprite UziSprite;
+    public Sprite AKSprite;
 
     public GameObject gunModel;
 
@@ -27,6 +28,10 @@ public class EvolutionManager : MonoBehaviour
     
     public float uziDamagePunishment;
     public float uziFireRateBoost;
+
+    public float AKDamageBonus;
+    public float AKFireRateBonus;
+
     
     //Top-left images
     public GameObject defaultGunImage;
@@ -70,13 +75,13 @@ public class EvolutionManager : MonoBehaviour
     {
         if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints == evolveTreshHold)
         {
-            
+            EvolveToAK();
         }
-        else if (Gun.gunEvoFPPoints == evolveTreshHold)
+        else if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints < evolveTreshHold)
         {
             EvolveToShotgun();
         }
-        else if (Gun.gunEvoFRPoints == evolveTreshHold)
+        else if (Gun.gunEvoFRPoints == evolveTreshHold && Gun.gunEvoFPPoints < evolveTreshHold)
         {
             EvolveToUzi();
         }
@@ -112,5 +117,21 @@ public class EvolutionManager : MonoBehaviour
         shotgunImage.SetActive(false);
         akImage.SetActive(false);
         uziImage.SetActive(true);
+    }
+    
+    private void EvolveToAK()
+    {
+        Gun.GunState = new AKGun();
+        Gun.gunDamage += AKDamageBonus;
+        Gun.gunFireRate += AKFireRateBonus;
+
+        Animator animator = gunModel.GetComponent<Animator>();
+        animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Ak/Ak") as RuntimeAnimatorController;
+        gunModel.GetComponent<SpriteRenderer>().sprite = AKSprite;
+
+        defaultGunImage.SetActive(false);
+        shotgunImage.SetActive(false);
+        akImage.SetActive(true);
+        uziImage.SetActive(false);
     }
 }
