@@ -9,7 +9,7 @@ public class EvolutionManager : MonoBehaviour
     public static float evoPointByKill;
 
     public float evolveIncreaseAmount;
-    public float evolveTreshHold;
+    public float evolveTreshHold = Gun.MAX_FP_POINTS;
     
     public Gun Gun;
 

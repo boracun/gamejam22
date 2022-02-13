@@ -33,6 +33,7 @@ public class HUD : MonoBehaviour
     private Image currentGun;
 
     private Gun _gun;
+    private EvolutionManager _em;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class HUD : MonoBehaviour
     private void Start()
     {
         _gun = GameObject.FindGameObjectWithTag("Panda").transform.GetChild(0).GetComponent<Gun>();
+        _em = FindObjectOfType<EvolutionManager>();
     }
 
     public void IncreaseHealth(float increaseAmount)
@@ -81,6 +83,20 @@ public class HUD : MonoBehaviour
     public void EnableFRButton()
     {
         fireRateButton.interactable = true;
+    }
+
+    public void ClickFPButton()
+    {
+        _em.EvolveFP();
+        firepowerButton.interactable = false;
+        fireRateButton.interactable = false;
+    }
+    
+    public void ClickFRButton()
+    {
+        _em.EvolveFR();
+        firepowerButton.interactable = false;
+        fireRateButton.interactable = false;
     }
 
     public void IncreaseFP(float increaseAmount)
