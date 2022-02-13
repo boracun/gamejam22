@@ -2123,7 +2123,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fire Power 0/5
+  m_Text: Fire Power 0
 --- !u!222 &1023595254
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3352,7 +3352,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fire Rate  0/5
+  m_Text: Fire Rate  0
 --- !u!222 &2141309096
 CanvasRenderer:
   m_ObjectHideFlags: 0
