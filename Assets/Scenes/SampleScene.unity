@@ -354,8 +354,10 @@ MonoBehaviour:
   time: 0
   spawnTime: 4
   Gun: {fileID: 1599921332}
-  enemyHealthSpawn: 0
-  healthMultiplier: 0
+  enemyHealthSpawn: 200
+  healthMultiplier: 0.4
+  enemySpeedSpawn: 1
+  speedMultiplier: 0.1
   EnemySpawnManager: {fileID: 23383621}
 --- !u!114 &23383621
 MonoBehaviour:
