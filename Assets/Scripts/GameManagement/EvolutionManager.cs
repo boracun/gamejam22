@@ -68,11 +68,6 @@ public class EvolutionManager : MonoBehaviour
 
     public void EvolveGun()
     {
-        defaultGunImage.SetActive(false);
-        shotgunImage.SetActive(false);
-        uziImage.SetActive(false);
-        akImage.SetActive(false);
-        
         if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints == evolveTreshHold)
         {
             
@@ -97,6 +92,9 @@ public class EvolutionManager : MonoBehaviour
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Shotgun/Shotgun") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = ShotgunSprite;
         
+        defaultGunImage.SetActive(false);
+        uziImage.SetActive(false);
+        akImage.SetActive(false);
         shotgunImage.SetActive(true);
     }
     
@@ -110,6 +108,9 @@ public class EvolutionManager : MonoBehaviour
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Uzi/Uzi") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = UziSprite;
         
+        defaultGunImage.SetActive(false);
+        shotgunImage.SetActive(false);
+        akImage.SetActive(false);
         uziImage.SetActive(true);
     }
 }
