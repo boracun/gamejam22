@@ -36,8 +36,10 @@ namespace GunScripts
             ShotgunGunProjectile1.GetComponent<Rigidbody2D>().velocity = shootingVector1.normalized * gunInformation.bulletSpeed;
             ShotgunGunProjectile2.GetComponent<Rigidbody2D>().velocity = shootingVector2.normalized * gunInformation.bulletSpeed;
             ShotgunGunProjectile3.GetComponent<Rigidbody2D>().velocity = shootingVector3.normalized * gunInformation.bulletSpeed;
+            
+            gunInformation.src.Play();
         }
-        
+
         public static Vector2 rotate(Vector2 v, float delta) {
             return new Vector2(
                 v.x * Mathf.Cos(delta) - v.y * Mathf.Sin(delta),
