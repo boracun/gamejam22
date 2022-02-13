@@ -23,20 +23,68 @@ public class GameManager : MonoBehaviour
     {
         waveLength += Time.deltaTime;
         time += Time.deltaTime;
-        if (time >= spawnTime)
+
+        if (waveLength <= 20)
         {
-            SpawnInfo[] spawnInfos = new SpawnInfo[4];
-            SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
-            SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
-            SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
-            SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
-            spawnInfos[0] = spawnInfo;
-            spawnInfos[1] = spawnInfo2;
-            spawnInfos[2] = spawnInfo3;
-            spawnInfos[3] = spawnInfo4;
-            
-            EnemySpawnManager.SpawnEnemies(spawnInfos);
-            time = 0f;
+            if (time >= spawnTime)
+            {
+                SpawnInfo[] spawnInfos = new SpawnInfo[4];
+                SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                spawnInfos[0] = spawnInfo;
+                spawnInfos[1] = spawnInfo2;
+                spawnInfos[2] = spawnInfo3;
+                spawnInfos[3] = spawnInfo4;
+
+                EnemySpawnManager.SpawnEnemies(spawnInfos);
+                time = 0f;
+            }
+        }
+        else if (20 < waveLength && waveLength <= 30)
+        {
+            return;
+        }
+        else if (30 < waveLength && waveLength <= 50)
+        {
+            if (time >= spawnTime)
+            {
+                SpawnInfo[] spawnInfos = new SpawnInfo[4];
+                SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                spawnInfos[0] = spawnInfo;
+                spawnInfos[1] = spawnInfo2;
+                spawnInfos[2] = spawnInfo3;
+                spawnInfos[3] = spawnInfo4;
+
+                EnemySpawnManager.SpawnEnemies(spawnInfos);
+                time = 0f;
+            }
+        }
+        else if (50 < waveLength && waveLength <= 60)
+        {
+            return;
+        }
+        else if (60 < waveLength && waveLength <= 80)
+        {
+            if (time >= spawnTime)
+            {
+                SpawnInfo[] spawnInfos = new SpawnInfo[4];
+                SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
+                spawnInfos[0] = spawnInfo;
+                spawnInfos[1] = spawnInfo2;
+                spawnInfos[2] = spawnInfo3;
+                spawnInfos[3] = spawnInfo4;
+
+                EnemySpawnManager.SpawnEnemies(spawnInfos);
+                time = 0f;
+            }
         }
     }
 }
