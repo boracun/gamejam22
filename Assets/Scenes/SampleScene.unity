@@ -353,6 +353,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 0
   spawnTime: 4
+  Gun: {fileID: 1599921332}
+  enemyHealthSpawn: 0
+  healthMultiplier: 0
   EnemySpawnManager: {fileID: 23383621}
 --- !u!114 &23383621
 MonoBehaviour:
@@ -395,7 +398,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61b22bc633a60448bd28b9ab4a82a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
   healthText: {fileID: 564032842}
   evolutionMeterText: {fileID: 807413509}
   pandaSpeechText: {fileID: 550595219}
