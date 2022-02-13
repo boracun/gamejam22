@@ -9,7 +9,7 @@ namespace Enemy
         {
             GameObject player = enemyAttackInformation.playerObject;
             EnemyProperties enemyProperties = enemyAttackInformation.enemyProperties;
-            player.transform.GetChild(0).GetComponent<Gun>().gunHealth -= enemyProperties.damage;
+            HUD.Instance.DecreaseHealth(enemyProperties.damage);
         }
     }
 }
