@@ -10,7 +10,11 @@ public class EvolutionManager : MonoBehaviour
 
     public float evolveIncreaseAmount;
     public float evolveTreshHold = Gun.MAX_FP_POINTS;
-    
+
+    public Sprite ShotgunSprite;
+    public Sprite UziSprite;
+
+    public Animation ShotgunAnimation;
     public Gun Gun;
 
 
@@ -67,6 +71,8 @@ public class EvolutionManager : MonoBehaviour
         Gun.GunState = new ShotgunGun();
         Gun.gunDamage += shotgunDamageBoost;
         Gun.gunFireRate -= shotgunFireRatePunishment;
-        Gun.gameObject.GetComponent<SpriteRenderer>().sprite = 
+        
+        Gun.gameObject.GetComponentInChildren<SpriteRenderer>().sprite = ShotgunSprite;
+
     }
 }
