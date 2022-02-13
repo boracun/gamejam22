@@ -27,6 +27,8 @@ namespace GameManagement
                 
                 GameObject enemy = GameObject.Instantiate(EnemySpawnManager.GetPrefab(spawnEvent.spawnInfo.enemyType), 
                     spawnEvent.spawnLocation, Quaternion.identity);
+                
+                enemy.GetComponent<EnemyProperties>().health = spawnEvent.spawnInfo.enemyHealth;
 
                 EnemySpawnManager.SpawnEventList.Remove(spawnEventKey);
             }
