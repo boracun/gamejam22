@@ -29,6 +29,7 @@ namespace GameManagement
                     spawnEvent.spawnLocation, Quaternion.identity);
                 
                 enemy.GetComponent<EnemyProperties>().health = spawnEvent.spawnInfo.enemyHealth;
+                enemy.GetComponent<EnemyMovement>().enemySpeed = spawnEvent.spawnInfo.enemySpeed;
 
                 EnemySpawnManager.SpawnEventList.Remove(spawnEventKey);
             }
