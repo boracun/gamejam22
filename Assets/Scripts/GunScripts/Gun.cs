@@ -56,6 +56,7 @@ namespace GunScripts
 
             }
 
+            // gun rotatation
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 5.23f;
 
