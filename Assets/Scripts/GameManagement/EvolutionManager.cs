@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using GunScripts;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -8,7 +8,6 @@ using Object = UnityEngine.Object;
 
 public class EvolutionManager : MonoBehaviour
 {
-
     [SerializeField]
     public static float evoPointByKill;
 
@@ -23,8 +22,7 @@ public class EvolutionManager : MonoBehaviour
 
     public AnimatorController ShotgunAnimation;
     public Gun Gun;
-
-
+    
     public float shotgunDamageBoost;
     public float shotgunFireRatePunishment;
     
@@ -35,6 +33,11 @@ public class EvolutionManager : MonoBehaviour
     public float AKFireRateBonus;
 
     
+    //Top-left images
+    public GameObject defaultGunImage;
+    public GameObject shotgunImage;
+    public GameObject uziImage;
+    public GameObject akImage;
 
     private void Update()
     {
@@ -94,11 +97,10 @@ public class EvolutionManager : MonoBehaviour
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Shotgun/Shotgun") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = ShotgunSprite;
         
-        GameObject gunImage = GameObject.Find("GunImage");
-        gunImage.GetComponent<Image>().sprite = ShotgunSprite;
-        Animator animator2 = gunImage.GetComponent<Animator>();
-        animator2.runtimeAnimatorController = Resources.Load("Animations/Guns/Shotgun/Shotgun") as RuntimeAnimatorController;
-
+        defaultGunImage.SetActive(false);
+        uziImage.SetActive(false);
+        akImage.SetActive(false);
+        shotgunImage.SetActive(true);
     }
     
     private void EvolveToUzi()
@@ -111,11 +113,10 @@ public class EvolutionManager : MonoBehaviour
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Uzi/Uzi") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = UziSprite;
         
-        GameObject gunImage = GameObject.Find("GunImage");
-        gunImage.GetComponent<Image>().sprite = UziSprite;
-        Animator animator2 = gunImage.GetComponent<Animator>();
-        animator2.runtimeAnimatorController = Resources.Load("Animations/Guns/Uzi/Uzi") as RuntimeAnimatorController;
-
+        defaultGunImage.SetActive(false);
+        shotgunImage.SetActive(false);
+        akImage.SetActive(false);
+        uziImage.SetActive(true);
     }
     
     private void EvolveToAK()
