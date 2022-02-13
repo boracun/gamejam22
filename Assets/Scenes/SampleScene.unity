@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 23383622}
   - component: {fileID: 23383621}
   - component: {fileID: 23383620}
+  - component: {fileID: 23383623}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -300,6 +301,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &23383623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23383619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61b22bc633a60448bd28b9ab4a82a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 564032842}
+  evolutionMeterText: {fileID: 807413509}
+  pandaSpeechText: {fileID: 550595219}
+  firepowerText: {fileID: 1023595253}
+  fireRateText: {fileID: 2141309095}
+  firepowerButton: {fileID: 381265486}
+  fireRateButton: {fileID: 971632006}
+  currentGun: {fileID: 1765321684}
 --- !u!1 &125745121
 GameObject:
   m_ObjectHideFlags: 0
@@ -2072,10 +2093,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f73fade30f47b4e83572ffef552e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunHealth: 0
+  gunHealth: 200
+  maxGunHealth: 200
   gunDamage: 50
   gunFireRate: 120
   bulletSpeed: 10
+  evolutionPoints: 0
   camera: {fileID: 519420031}
 --- !u!1 &1765321682
 GameObject:
