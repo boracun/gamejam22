@@ -29,7 +29,7 @@ namespace GunScripts
         // Start is called before the first frame update
         void Start()
         {
-            GunState = new ShotgunGun();
+            GunState = new NormalGun();
             src = gameObject.GetComponent<AudioSource>();
         }
 

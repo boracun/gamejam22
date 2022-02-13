@@ -1,10 +1,13 @@
 ﻿using System;
 using GunScripts;
+using UnityEditor.Animations;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 
 public class EvolutionManager : MonoBehaviour
 {
+
     [SerializeField]
     public static float evoPointByKill;
 
@@ -14,13 +17,15 @@ public class EvolutionManager : MonoBehaviour
     public Sprite ShotgunSprite;
     public Sprite UziSprite;
 
-    public Animation ShotgunAnimation;
+    public GameObject gunModel;
+
+    public AnimatorController ShotgunAnimation;
     public Gun Gun;
 
 
     public float shotgunDamageBoost;
     public float shotgunFireRatePunishment;
-    
+
     
 
     private void Update()
@@ -71,8 +76,10 @@ public class EvolutionManager : MonoBehaviour
         Gun.GunState = new ShotgunGun();
         Gun.gunDamage += shotgunDamageBoost;
         Gun.gunFireRate -= shotgunFireRatePunishment;
-        
-        Gun.gameObject.GetComponentInChildren<SpriteRenderer>().sprite = ShotgunSprite;
+
+        Animator animator = gunModel.GetComponent<Animator>();
+        animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Shotgun/Shotgun") as RuntimeAnimatorController;
+        gunModel.GetComponent<SpriteRenderer>().sprite = ShotgunSprite;
 
     }
 }

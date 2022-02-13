@@ -10,7 +10,7 @@ public class GunRotator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        sr_g = gameObject.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
