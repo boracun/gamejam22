@@ -77,11 +77,11 @@ public class EvolutionManager : MonoBehaviour
         {
             EvolveToAK();
         }
-        else if (Gun.gunEvoFPPoints == evolveTreshHold)
+        else if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints < evolveTreshHold)
         {
             EvolveToShotgun();
         }
-        else if (Gun.gunEvoFRPoints == evolveTreshHold)
+        else if (Gun.gunEvoFRPoints == evolveTreshHold && Gun.gunEvoFPPoints < evolveTreshHold)
         {
             EvolveToUzi();
         }
@@ -128,11 +128,10 @@ public class EvolutionManager : MonoBehaviour
         Animator animator = gunModel.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/AK/AK") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = AKSprite;
-        
-        GameObject gunImage = GameObject.Find("GunImage");
-        gunImage.GetComponent<Image>().sprite = UziSprite;
-        Animator animator2 = gunImage.GetComponent<Animator>();
-        animator2.runtimeAnimatorController = Resources.Load("Animations/Guns/AK/AK") as RuntimeAnimatorController;
 
+        defaultGunImage.SetActive(false);
+        shotgunImage.SetActive(false);
+        akImage.SetActive(true);
+        uziImage.SetActive(false);
     }
 }
