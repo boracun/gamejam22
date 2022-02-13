@@ -68,6 +68,11 @@ public class HUD : MonoBehaviour
         UpdateEvolutionPointsText();
     }
 
+    public void SetPandaSpeechText(String quote)
+    {
+        pandaSpeechText.text = quote;
+    }
+    
     public void EnableFPButton()
     {
         firepowerButton.enabled = true;
