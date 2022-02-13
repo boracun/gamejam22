@@ -68,6 +68,16 @@ public class HUD : MonoBehaviour
         UpdateEvolutionPointsText();
     }
 
+    public void EnableFPButton()
+    {
+        firepowerButton.enabled = true;
+    }
+    
+    public void EnableFRButton()
+    {
+        fireRateButton.enabled = true;
+    }
+
     private void UpdateHealthText()
     {
         healthText.text = _gun.gunHealth + "/" + _gun.maxGunHealth;
