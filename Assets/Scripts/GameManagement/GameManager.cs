@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         waveLength += Time.deltaTime;
         time += Time.deltaTime;
 
-        if (waveLength <= 20)
+        if (waveLength <= 30)
         {
             if (time >= spawnTime)
             {
@@ -47,11 +47,11 @@ public class GameManager : MonoBehaviour
                 time = 0f;
             }
         }
-        else if (20 < waveLength && waveLength <= 30)
+        else if (30 < waveLength && waveLength <= 40)
         {
             return;
         }
-        else if (30 < waveLength && waveLength <= 50)
+        else if (40 < waveLength && waveLength <= 70)
         {
             if (time >= spawnTime)
             {
@@ -69,11 +69,55 @@ public class GameManager : MonoBehaviour
                 time = 0f;
             }
         }
-        else if (50 < waveLength && waveLength <= 60)
+        else if (70 < waveLength && waveLength <= 80)
         {
             return;
         }
-        else if (60 < waveLength)
+        else if (80 < waveLength && waveLength <= 110)
+        {
+            if (time >= spawnTime)
+            {
+                SpawnInfo[] spawnInfos = new SpawnInfo[4];
+                SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, 0f, 0f);
+                SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, 0f, 0f);
+                SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, 0f, 0f);
+                SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, 0f, 0f);
+                spawnInfos[0] = spawnInfo;
+                spawnInfos[1] = spawnInfo2;
+                spawnInfos[2] = spawnInfo3;
+                spawnInfos[3] = spawnInfo4;
+
+                EnemySpawnManager.SpawnEnemies(spawnInfos);
+                time = 0f;
+            }
+        }
+        else if (110 < waveLength && waveLength <= 120)
+        {
+            return;
+        }
+        else if (120 < waveLength && waveLength <= 150)
+        {
+            if (time >= spawnTime)
+            {
+                SpawnInfo[] spawnInfos = new SpawnInfo[4];
+                SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, 0f, 0f);
+                SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, 0f, 0f);
+                SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, 0f, 0f);
+                SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, 0f, 0f);
+                spawnInfos[0] = spawnInfo;
+                spawnInfos[1] = spawnInfo2;
+                spawnInfos[2] = spawnInfo3;
+                spawnInfos[3] = spawnInfo4;
+
+                EnemySpawnManager.SpawnEnemies(spawnInfos);
+                time = 0f;
+            }
+        }
+        else if (150 < waveLength && waveLength <= 160)
+        {
+            return;
+        }
+        else if (160 < waveLength)
         {
             if (time >= spawnTime)
             {
