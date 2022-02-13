@@ -362,6 +362,10 @@ MonoBehaviour:
   uziPowerCooldown: 5
   uziPowerAbilityTime: 5
   gunAbilityFireRateBonus: 1
+  AKProjectileMaxRadian: 0.3
+  AKAbilityHitCount: 0
+  AKAbilityMultiplier: 0.1
+  AKAbilityActivateRate: 5
 --- !u!1 &102991405
 GameObject:
   m_ObjectHideFlags: 0

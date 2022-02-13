@@ -14,6 +14,12 @@ namespace GameManagement
         public float uziPowerAbilityTime;
         public float gunAbilityFireRateBonus;
 
+        public float AKProjectileMaxRadian = Mathf.PI/48;
+
+        public float AKAbilityHitCount;
+        public float AKAbilityMultiplier;
+        public float AKAbilityActivateRate;
+
         private void Awake()
         {
             _instance = this;

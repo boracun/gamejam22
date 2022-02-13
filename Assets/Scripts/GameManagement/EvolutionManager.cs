@@ -17,6 +17,7 @@ public class EvolutionManager : MonoBehaviour
 
     public Sprite ShotgunSprite;
     public Sprite UziSprite;
+    public Sprite AKSprite;
 
     public GameObject gunModel;
 
@@ -29,6 +30,9 @@ public class EvolutionManager : MonoBehaviour
     
     public float uziDamagePunishment;
     public float uziFireRateBoost;
+
+    public float AKDamageBonus;
+    public float AKFireRateBonus;
 
     
 
@@ -68,7 +72,7 @@ public class EvolutionManager : MonoBehaviour
     {
         if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints == evolveTreshHold)
         {
-            
+            EvolveToAK();
         }
         else if (Gun.gunEvoFPPoints == evolveTreshHold)
         {
@@ -111,6 +115,23 @@ public class EvolutionManager : MonoBehaviour
         gunImage.GetComponent<Image>().sprite = UziSprite;
         Animator animator2 = gunImage.GetComponent<Animator>();
         animator2.runtimeAnimatorController = Resources.Load("Animations/Guns/Uzi/Uzi") as RuntimeAnimatorController;
+
+    }
+    
+    private void EvolveToAK()
+    {
+        Gun.GunState = new AKGun();
+        Gun.gunDamage += AKDamageBonus;
+        Gun.gunFireRate += AKFireRateBonus;
+
+        Animator animator = gunModel.GetComponent<Animator>();
+        animator.runtimeAnimatorController = Resources.Load("Animations/Guns/AK/AK") as RuntimeAnimatorController;
+        gunModel.GetComponent<SpriteRenderer>().sprite = AKSprite;
+        
+        GameObject gunImage = GameObject.Find("GunImage");
+        gunImage.GetComponent<Image>().sprite = UziSprite;
+        Animator animator2 = gunImage.GetComponent<Animator>();
+        animator2.runtimeAnimatorController = Resources.Load("Animations/Guns/AK/AK") as RuntimeAnimatorController;
 
     }
 }
