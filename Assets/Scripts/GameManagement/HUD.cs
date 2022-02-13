@@ -135,11 +135,11 @@ public class HUD : MonoBehaviour
 
     private void UpdateFPText()
     {
-        firepowerText.text = _gun.gunEvoFPPoints + "/" + Gun.MAX_FP_POINTS;
+        firepowerText.text = "Fire Power " + _gun.gunEvoFPPoints + "/" + Gun.MAX_FP_POINTS;
     }
     
     private void UpdateFRText()
     {
-        fireRateText.text = _gun.gunEvoFRPoints + "/" + Gun.MAX_FR_POINTS;
+        fireRateText.text = "Fire Rate  " + _gun.gunEvoFRPoints + "/" + Gun.MAX_FR_POINTS;
     }
 }
