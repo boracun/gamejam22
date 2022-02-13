@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         waveLength += Time.deltaTime;
         time += Time.deltaTime;
 
-        if (waveLength <= 30)
+        if (waveLength <= 20)
         {
             if (time >= spawnTime)
             {
@@ -52,11 +52,11 @@ public class GameManager : MonoBehaviour
                 time = 0f;
             }
         }
-        else if (30 < waveLength && waveLength <= 40)
+        else if (20 < waveLength && waveLength <= 30)
         {
             return;
         }
-        else if (40 < waveLength && waveLength <= 70)
+        else if (30 < waveLength && waveLength <= 60)
         {
             if (time >= spawnTime)
             {
@@ -74,11 +74,11 @@ public class GameManager : MonoBehaviour
                 time = 0f;
             }
         }
-        else if (70 < waveLength && waveLength <= 80)
+        else if (60 < waveLength && waveLength <= 70)
         {
             return;
         }
-        else if (80 < waveLength && waveLength <= 110)
+        else if (70 < waveLength && waveLength <= 120)
         {
             if (time >= spawnTime)
             {
@@ -96,11 +96,11 @@ public class GameManager : MonoBehaviour
                 time = 0f;
             }
         }
-        else if (110 < waveLength && waveLength <= 120)
+        else if (120 < waveLength && waveLength <= 130)
         {
             return;
         }
-        else if (120 < waveLength && waveLength <= 150)
+        else if (130 < waveLength && waveLength <= 190)
         {
             if (time >= spawnTime)
             {
@@ -118,11 +118,11 @@ public class GameManager : MonoBehaviour
                 time = 0f;
             }
         }
-        else if (150 < waveLength && waveLength <= 160)
+        else if (190 < waveLength && waveLength <= 200)
         {
             return;
         }
-        else if (160 < waveLength)
+        else if (200 < waveLength)
         {
             if (time >= spawnTime)
             {
