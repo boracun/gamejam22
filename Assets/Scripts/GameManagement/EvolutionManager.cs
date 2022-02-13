@@ -67,6 +67,6 @@ public class EvolutionManager : MonoBehaviour
         Gun.GunState = new ShotgunGun();
         Gun.gunDamage += shotgunDamageBoost;
         Gun.gunFireRate -= shotgunFireRatePunishment;
-        
+        Gun.gameObject.GetComponent<SpriteRenderer>().sprite = 
     }
 }
