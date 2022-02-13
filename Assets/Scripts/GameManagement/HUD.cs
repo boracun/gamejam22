@@ -78,6 +78,30 @@ public class HUD : MonoBehaviour
         fireRateButton.enabled = true;
     }
 
+    public void IncreaseFP(float increaseAmount)
+    {
+        _gun.gunEvoFPPoints += increaseAmount;
+        UpdateFPText();
+    }
+    
+    public void IncreaseFR(float increaseAmount)
+    {
+        _gun.gunEvoFRPoints += increaseAmount;
+        UpdateFRText();
+    }
+    
+    public void DecreaseFP(float decreaseAmount)
+    {
+        _gun.gunEvoFPPoints -= decreaseAmount;
+        UpdateFPText();
+    }
+    
+    public void DecreaseFR(float decreaseAmount)
+    {
+        _gun.gunEvoFRPoints -= decreaseAmount;
+        UpdateFRText();
+    }
+
     private void UpdateHealthText()
     {
         healthText.text = _gun.gunHealth + "/" + _gun.maxGunHealth;
@@ -86,5 +110,15 @@ public class HUD : MonoBehaviour
     private void UpdateEvolutionPointsText()
     {
         evolutionMeterText.text = _gun.evolutionPoints + "/" + Gun.MAX_EVOLUTION_POINTS;
+    }
+
+    private void UpdateFPText()
+    {
+        firepowerText.text = _gun.gunEvoFPPoints + "/" + Gun.MAX_FP_POINTS;
+    }
+    
+    private void UpdateFRText()
+    {
+        fireRateText.text = _gun.gunEvoFRPoints + "/" + Gun.MAX_FR_POINTS;
     }
 }

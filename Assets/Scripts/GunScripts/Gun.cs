@@ -5,7 +5,10 @@ namespace GunScripts
 {
     public class Gun : MonoBehaviour
     {
-        public const float MAX_EVOLUTION_POINTS = 100f;
+        public const float MAX_EVOLUTION_POINTS = 100;
+        public const float MAX_FP_POINTS = 5;
+        public const float MAX_FR_POINTS = 5;
+        
         public float gunHealth;
         public float maxGunHealth;
         public float gunDamage;
@@ -13,7 +16,7 @@ namespace GunScripts
         public float bulletSpeed;
         public float evolutionPoints;
         public float gunEvoFPPoints;
-        public float gunEvoPRPoints;
+        public float gunEvoFRPoints;
 
         public IGunState GunState;
         public Camera camera;
