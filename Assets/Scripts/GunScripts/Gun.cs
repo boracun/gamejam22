@@ -23,6 +23,8 @@ namespace GunScripts
 
         private bool fired = false;
         private float firedTimer = 0f;
+        
+        
 
         // Start is called before the first frame update
         void Start()

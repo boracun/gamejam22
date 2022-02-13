@@ -13,6 +13,12 @@ public class EvolutionManager : MonoBehaviour
     
     public Gun Gun;
 
+
+    public float shotgunDamageBoost;
+    public float shotgunFireRatePunishment;
+    
+    
+
     private void Update()
     {
         if (Gun.evolutionPoints >= Gun.MAX_EVOLUTION_POINTS)
@@ -27,6 +33,7 @@ public class EvolutionManager : MonoBehaviour
         HUD.Instance.IncreaseFP(1);
         HUD.Instance.ResetEvolutionPoints();
         Gun.gunDamage += evolveIncreaseAmount;
+        HUD.Instance.ResetEvolutionPoints();
         EvolveGun();
     }
     
@@ -35,6 +42,7 @@ public class EvolutionManager : MonoBehaviour
         HUD.Instance.IncreaseFR(1);
         HUD.Instance.ResetEvolutionPoints();
         Gun.gunFireRate += evolveIncreaseAmount;
+        HUD.Instance.ResetEvolutionPoints();
         EvolveGun();
     }
 
@@ -46,11 +54,18 @@ public class EvolutionManager : MonoBehaviour
         }
         else if (Gun.gunEvoFPPoints == evolveTreshHold)
         {
-            
+            EvolveToShotgun();
         }
         else if (Gun.gunEvoFRPoints == evolveTreshHold)
         {
             
         }
+    }
+
+    private void EvolveToShotgun()
+    {
+        Gun.GunState = new ShotgunGun();
+        Gun.gunDamage += shotgunDamageBoost;
+        Gun.gunFireRate -= shotgunFireRatePunishment;
     }
 }
