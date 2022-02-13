@@ -27,7 +27,7 @@ namespace GunScripts
         // Start is called before the first frame update
         void Start()
         {
-            GunState = new NormalGun();
+            GunState = new ShotgunGun();
         }
 
         // Update is called once per frame
