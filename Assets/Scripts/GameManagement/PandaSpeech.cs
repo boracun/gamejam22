@@ -9,18 +9,20 @@ public class PandaSpeech : MonoBehaviour
     private int _currentQuoteIndex;
     private List<String> _quoteList = new List<string>()
     {
-        "quote1",
-        "quote2",
-        "quote3",
-        "quote4",
-        "quote5",
-        "quote6",
-        "quote7",
+        "Press 1 and 2 keys to use upgrade buttons",
+        "Upgrade firepower to get powerful guns",
+        "Upgrade fire rate to get faster guns",
+        "I trust you!",
+        "If you wait 5 seconds without shooting fast gun, it gets faster",
+        "5 accurate shots with the machine gun gives bigger bullets",
+        "Your health regenerates in every x score",
     };
     
     // Start is called before the first frame update
     void Start()
     {
+        HUD.Instance.SetPandaSpeechText(_quoteList[0]);
+        _currentQuoteIndex = 0;
         StartCoroutine(ChangeQuote());
     }
 
