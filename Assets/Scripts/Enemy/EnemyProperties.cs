@@ -7,6 +7,7 @@ namespace Enemy
     {
         public float health;
         public float damage;
+        public float attackCooldown;
         public EnemyType enemyType;
 
         public IEnemyDamageTakeBehavior EnemyDamageTakeBehavior;
