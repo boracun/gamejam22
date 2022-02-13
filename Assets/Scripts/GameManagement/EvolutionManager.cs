@@ -126,7 +126,7 @@ public class EvolutionManager : MonoBehaviour
         Gun.gunFireRate += AKFireRateBonus;
 
         Animator animator = gunModel.GetComponent<Animator>();
-        animator.runtimeAnimatorController = Resources.Load("Animations/Guns/AK/AK") as RuntimeAnimatorController;
+        animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Ak/Ak") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = AKSprite;
 
         defaultGunImage.SetActive(false);
