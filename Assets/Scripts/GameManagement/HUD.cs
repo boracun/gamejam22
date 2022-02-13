@@ -12,6 +12,8 @@ public class HUD : MonoBehaviour
 
     public static HUD Instance => _instance;
 
+    public float score;
+
     //Right side
     [SerializeField]
     private Text healthText;
@@ -148,5 +150,10 @@ public class HUD : MonoBehaviour
     private void UpdateFRText()
     {
         fireRateText.text = "Fire Rate  " + _gun.gunEvoFRPoints;
+    }
+
+    public void IncreaseScore(float points)
+    {
+        score += points;
     }
 }

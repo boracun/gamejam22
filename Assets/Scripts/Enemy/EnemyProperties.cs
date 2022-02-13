@@ -41,6 +41,7 @@ namespace Enemy
         public void EnemyDie()
         {
             HUD.Instance.IncreaseEvolutionPoints(rewardEvoPoints);
+            HUD.Instance.IncreaseScore(1);
             EnemyDeathBehavior.Die(gameObject);
         }
 

@@ -1,6 +1,7 @@
 using System;
 using GameManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace GunScripts
 {
@@ -38,6 +39,11 @@ namespace GunScripts
         // Update is called once per frame
         void Update()
         {
+            if (gunHealth <= 0)
+            {
+                SceneManager.UnloadSceneAsync("SampleScene");
+                SceneManager.LoadSceneAsync("Menu");
+            }
             if (fired)
             {
                 firedTimer += Time.deltaTime;
