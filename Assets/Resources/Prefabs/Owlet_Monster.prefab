@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   damage: 50
+  attackCooldown: 5
   enemyType: 0
 --- !u!114 &909206596086563164
 MonoBehaviour:
