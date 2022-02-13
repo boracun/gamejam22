@@ -8,7 +8,6 @@ using Object = UnityEngine.Object;
 
 public class EvolutionManager : MonoBehaviour
 {
-
     [SerializeField]
     public static float evoPointByKill;
 
@@ -22,15 +21,18 @@ public class EvolutionManager : MonoBehaviour
 
     public AnimatorController ShotgunAnimation;
     public Gun Gun;
-
-
+    
     public float shotgunDamageBoost;
     public float shotgunFireRatePunishment;
     
     public float uziDamagePunishment;
     public float uziFireRateBoost;
-
     
+    //Top-left images
+    public GameObject defaultGunImage;
+    public GameObject shotgunImage;
+    public GameObject uziImage;
+    public GameObject akImage;
 
     private void Update()
     {
@@ -66,6 +68,11 @@ public class EvolutionManager : MonoBehaviour
 
     public void EvolveGun()
     {
+        defaultGunImage.SetActive(false);
+        shotgunImage.SetActive(false);
+        uziImage.SetActive(false);
+        akImage.SetActive(false);
+        
         if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints == evolveTreshHold)
         {
             
@@ -90,11 +97,7 @@ public class EvolutionManager : MonoBehaviour
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Shotgun/Shotgun") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = ShotgunSprite;
         
-        GameObject gunImage = GameObject.Find("GunImage");
-        gunImage.GetComponent<Image>().sprite = ShotgunSprite;
-        Animator animator2 = gunImage.GetComponent<Animator>();
-        animator2.runtimeAnimatorController = Resources.Load("Animations/Guns/Shotgun/Shotgun") as RuntimeAnimatorController;
-
+        shotgunImage.SetActive(true);
     }
     
     private void EvolveToUzi()
@@ -107,10 +110,6 @@ public class EvolutionManager : MonoBehaviour
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Uzi/Uzi") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = UziSprite;
         
-        GameObject gunImage = GameObject.Find("GunImage");
-        gunImage.GetComponent<Image>().sprite = UziSprite;
-        Animator animator2 = gunImage.GetComponent<Animator>();
-        animator2.runtimeAnimatorController = Resources.Load("Animations/Guns/Uzi/Uzi") as RuntimeAnimatorController;
-
+        uziImage.SetActive(true);
     }
 }

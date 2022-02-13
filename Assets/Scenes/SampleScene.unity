@@ -346,6 +346,10 @@ MonoBehaviour:
   shotgunFireRatePunishment: 0
   uziDamagePunishment: 0
   uziFireRateBoost: 0
+  defaultGunImage: {fileID: 1765321682}
+  shotgunImage: {fileID: 612528779}
+  uziImage: {fileID: 2064718066}
+  akImage: {fileID: 102991405}
 --- !u!114 &23383625
 MonoBehaviour:
   m_ObjectHideFlags: 0
