@@ -316,6 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61b22bc633a60448bd28b9ab4a82a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   healthText: {fileID: 564032842}
   evolutionMeterText: {fileID: 807413509}
   pandaSpeechText: {fileID: 550595219}
@@ -337,16 +338,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evolveIncreaseAmount: 10
-  evolveTreshHold: 2
+  evolveTreshHold: 5
   ShotgunSprite: {fileID: 8363546646716079569, guid: 4f0914d548076144bada359c37d3985c, type: 3}
   UziSprite: {fileID: 21300000, guid: c45266bc44cf1e244a9c72afc7ee05d2, type: 3}
+  AKSprite: {fileID: 0}
   gunModel: {fileID: 1057495602}
   ShotgunAnimation: {fileID: 0}
   Gun: {fileID: 1599921332}
-  shotgunDamageBoost: 0
-  shotgunFireRatePunishment: 0
-  uziDamagePunishment: 0
-  uziFireRateBoost: 0
+  shotgunDamageBoost: 50
+  shotgunFireRatePunishment: 300
+  uziDamagePunishment: 30
+  uziFireRateBoost: 200
+  AKDamageBonus: 50
+  AKFireRateBonus: 100
   defaultGunImage: {fileID: 1765321682}
   shotgunImage: {fileID: 612528779}
   uziImage: {fileID: 2064718066}
