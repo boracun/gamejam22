@@ -12,7 +12,9 @@ namespace GunScripts
         public float gunFireRate;
         public float bulletSpeed;
         public float evolutionPoints;
-    
+        public float gunEvoFPPoints;
+        public float gunEvoPRPoints;
+
         public IGunState GunState;
         public Camera camera;
 
