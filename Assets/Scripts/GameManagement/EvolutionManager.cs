@@ -2,6 +2,7 @@
 using GunScripts;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 
@@ -88,6 +89,11 @@ public class EvolutionManager : MonoBehaviour
         Animator animator = gunModel.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Shotgun/Shotgun") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = ShotgunSprite;
+        
+        GameObject gunImage = GameObject.Find("GunImage");
+        gunImage.GetComponent<Image>().sprite = ShotgunSprite;
+        Animator animator2 = gunImage.GetComponent<Animator>();
+        animator2.runtimeAnimatorController = Resources.Load("Animations/Guns/Shotgun/Shotgun") as RuntimeAnimatorController;
 
     }
     
@@ -100,6 +106,11 @@ public class EvolutionManager : MonoBehaviour
         Animator animator = gunModel.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Uzi/Uzi") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = UziSprite;
+        
+        GameObject gunImage = GameObject.Find("GunImage");
+        gunImage.GetComponent<Image>().sprite = UziSprite;
+        Animator animator2 = gunImage.GetComponent<Animator>();
+        animator2.runtimeAnimatorController = Resources.Load("Animations/Guns/Uzi/Uzi") as RuntimeAnimatorController;
 
     }
 }
