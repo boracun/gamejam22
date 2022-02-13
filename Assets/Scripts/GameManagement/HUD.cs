@@ -12,8 +12,6 @@ public class HUD : MonoBehaviour
 
     public static HUD Instance => _instance;
 
-    public float score;
-
     //Right side
     [SerializeField]
     private Text healthText;
@@ -21,6 +19,8 @@ public class HUD : MonoBehaviour
     private Text evolutionMeterText;
     [SerializeField]
     private Text pandaSpeechText;
+    [SerializeField]
+    private Text scoreText;
 
     //Left side
     [SerializeField]
@@ -36,6 +36,7 @@ public class HUD : MonoBehaviour
 
     private Gun _gun;
     private EvolutionManager _em;
+    private float _score = 0;
 
     private void Awake()
     {
@@ -154,6 +155,7 @@ public class HUD : MonoBehaviour
 
     public void IncreaseScore(float points)
     {
-        score += points;
+        _score += points;
+        scoreText.text = _score.ToString();
     }
 }
