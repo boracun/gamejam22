@@ -24,12 +24,13 @@ namespace GunScripts
         private bool fired = false;
         private float firedTimer = 0f;
         
-        
+        public AudioSource src;
 
         // Start is called before the first frame update
         void Start()
         {
             GunState = new ShotgunGun();
+            src = gameObject.GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
@@ -55,10 +56,9 @@ namespace GunScripts
                 var gameObj = gameObject;
                 Vector3 playerVector = gameObj.transform.position;
                 MouseClickInformation mouseClickInformation = new MouseClickInformation(playerVector, mouseVector);
-                GunInformation gunInformation = new GunInformation(gunDamage, gunFireRate, bulletSpeed, gameObj.transform);
+                GunInformation gunInformation = new GunInformation(gunDamage, gunFireRate, bulletSpeed, gameObj.transform, src);
             
                 GunState.StateTrigger(gunInformation, mouseClickInformation); //Aka Shoot most probably in our demo
-
             }
         }
     }

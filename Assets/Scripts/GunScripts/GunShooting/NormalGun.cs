@@ -18,7 +18,7 @@ namespace GunScripts
             NormalGunProjectile.GetComponent<NormalGunProjectile>().GunInformation = gunInformation;
             Vector2 shootingVector = mouseClickInformation.GetPlayerMouseDistance();
             NormalGunProjectile.GetComponent<Rigidbody2D>().velocity = shootingVector.normalized * gunInformation.bulletSpeed;
-
+            gunInformation.src.Play();
         }
     
     
