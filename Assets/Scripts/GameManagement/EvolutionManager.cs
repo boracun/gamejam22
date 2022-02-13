@@ -34,6 +34,11 @@ public class EvolutionManager : MonoBehaviour
         {
             HUD.Instance.EnableFPButton();
             HUD.Instance.EnableFRButton();
+
+            if (Input.GetKey(KeyCode.Alpha1))
+                HUD.Instance.ClickFPButton();
+            else if (Input.GetKey(KeyCode.Alpha2))
+                HUD.Instance.ClickFRButton();
         }
     }
 
