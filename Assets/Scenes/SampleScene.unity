@@ -377,6 +377,7 @@ GameObject:
   - component: {fileID: 102991406}
   - component: {fileID: 102991408}
   - component: {fileID: 102991407}
+  - component: {fileID: 102991409}
   m_Layer: 5
   m_Name: AkImage
   m_TagString: Untagged
@@ -441,6 +442,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102991405}
   m_CullTransparentMesh: 1
+--- !u!95 &102991409
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102991405}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 63bc15f5f5892bc41b55289492f6865f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &125745121
 GameObject:
   m_ObjectHideFlags: 0
@@ -3061,6 +3081,7 @@ GameObject:
   - component: {fileID: 2064718067}
   - component: {fileID: 2064718069}
   - component: {fileID: 2064718068}
+  - component: {fileID: 2064718070}
   m_Layer: 5
   m_Name: UziImage
   m_TagString: Untagged
@@ -3125,6 +3146,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064718066}
   m_CullTransparentMesh: 1
+--- !u!95 &2064718070
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064718066}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32b6aba3b08114d4b9d6e129c1f0060b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2087209849
 GameObject:
   m_ObjectHideFlags: 0
