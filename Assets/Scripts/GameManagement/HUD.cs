@@ -47,12 +47,34 @@ public class HUD : MonoBehaviour
     public void IncreaseHealth(float increaseAmount)
     {
         _gun.gunHealth += increaseAmount;
-        healthText.text = _gun.gunHealth + "/" + _gun.maxGunHealth;
+        UpdateHealthText();
     }
     
     public void DecreaseHealth(float decreaseAmount)
     {
         _gun.gunHealth -= decreaseAmount;
+        UpdateHealthText();
+    }
+
+    public void IncreaseEvolutionPoints(float increaseAmount)
+    {
+        _gun.evolutionPoints += increaseAmount;
+        UpdateEvolutionPointsText();
+    }
+
+    public void ResetEvolutionPoints()
+    {
+        _gun.evolutionPoints = 0;
+        UpdateEvolutionPointsText();
+    }
+
+    private void UpdateHealthText()
+    {
         healthText.text = _gun.gunHealth + "/" + _gun.maxGunHealth;
+    }
+    
+    private void UpdateEvolutionPointsText()
+    {
+        evolutionMeterText.text = _gun.evolutionPoints + "/" + Gun.MAX_EVOLUTION_POINTS;
     }
 }

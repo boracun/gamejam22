@@ -313,14 +313,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61b22bc633a60448bd28b9ab4a82a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthText: {fileID: 0}
-  evolutionMeterText: {fileID: 0}
-  pandaSpeechText: {fileID: 0}
-  firepowerText: {fileID: 0}
-  fireRateText: {fileID: 0}
-  firepowerButton: {fileID: 0}
-  fireRateButton: {fileID: 0}
-  currentGun: {fileID: 0}
+  healthText: {fileID: 564032842}
+  evolutionMeterText: {fileID: 807413509}
+  pandaSpeechText: {fileID: 550595219}
+  firepowerText: {fileID: 1023595253}
+  fireRateText: {fileID: 2141309095}
+  firepowerButton: {fileID: 381265486}
+  fireRateButton: {fileID: 971632006}
+  currentGun: {fileID: 1765321684}
 --- !u!1 &125745121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1982,6 +1982,7 @@ MonoBehaviour:
   gunDamage: 50
   gunFireRate: 120
   bulletSpeed: 10
+  evolutionPoints: 0
   camera: {fileID: 519420031}
 --- !u!212 &1599921334
 SpriteRenderer:
