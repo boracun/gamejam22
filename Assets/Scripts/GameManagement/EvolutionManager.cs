@@ -11,7 +11,8 @@ public class EvolutionManager : MonoBehaviour
     [SerializeField]
     public static float evoPointByKill;
 
-    public float evolveIncreaseAmount;
+    public float evolveDamageIncreaseAmount;
+    public float evolveFireRateIncreaseAmount;
     public float evolveTreshHold = Gun.MAX_FP_POINTS;
 
     public Sprite ShotgunSprite;
@@ -57,7 +58,7 @@ public class EvolutionManager : MonoBehaviour
     {
         HUD.Instance.IncreaseFP(1);
         HUD.Instance.ResetEvolutionPoints();
-        Gun.gunDamage += evolveIncreaseAmount;
+        Gun.gunDamage += evolveDamageIncreaseAmount;
         HUD.Instance.ResetEvolutionPoints();
         EvolveGun();
     }
@@ -66,7 +67,7 @@ public class EvolutionManager : MonoBehaviour
     {
         HUD.Instance.IncreaseFR(1);
         HUD.Instance.ResetEvolutionPoints();
-        Gun.gunFireRate += evolveIncreaseAmount;
+        Gun.gunFireRate += evolveFireRateIncreaseAmount;
         HUD.Instance.ResetEvolutionPoints();
         EvolveGun();
     }
