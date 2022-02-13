@@ -75,12 +75,12 @@ public class HUD : MonoBehaviour
     
     public void EnableFPButton()
     {
-        firepowerButton.enabled = true;
+        firepowerButton.interactable = true;
     }
     
     public void EnableFRButton()
     {
-        fireRateButton.enabled = true;
+        fireRateButton.interactable = true;
     }
 
     public void IncreaseFP(float increaseAmount)
