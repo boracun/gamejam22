@@ -43,8 +43,7 @@ namespace GunScripts
         {
             if (gunHealth <= 0)
             {
-                SceneManager.UnloadSceneAsync("SampleScene");
-                SceneManager.LoadSceneAsync("Menu");
+                SceneManager.LoadSceneAsync("GameOver");
             }
             if (fired)
             {
