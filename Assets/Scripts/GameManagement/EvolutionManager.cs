@@ -9,7 +9,7 @@ public class EvolutionManager : MonoBehaviour
     public static float evoPointByKill;
 
     public float evolveIncreaseAmount;
-    public float evolveTreshHold;
+    public float evolveTreshHold = Gun.MAX_FP_POINTS;
     
     public Gun Gun;
 
@@ -25,13 +25,13 @@ public class EvolutionManager : MonoBehaviour
         {
             HUD.Instance.EnableFPButton();
             HUD.Instance.EnableFRButton();
-            HUD.Instance.ResetEvolutionPoints();
         }
     }
 
     public void EvolveFP()
     {
         HUD.Instance.IncreaseFP(1);
+        HUD.Instance.ResetEvolutionPoints();
         Gun.gunDamage += evolveIncreaseAmount;
         HUD.Instance.ResetEvolutionPoints();
         EvolveGun();
@@ -40,6 +40,7 @@ public class EvolutionManager : MonoBehaviour
     public void EvolveFR()
     {
         HUD.Instance.IncreaseFR(1);
+        HUD.Instance.ResetEvolutionPoints();
         Gun.gunFireRate += evolveIncreaseAmount;
         HUD.Instance.ResetEvolutionPoints();
         EvolveGun();
