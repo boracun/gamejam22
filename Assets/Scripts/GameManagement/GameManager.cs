@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-        else if (60 < waveLength && waveLength <= 80)
+        else if (60 < waveLength)
         {
             if (time >= spawnTime)
             {
