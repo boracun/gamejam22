@@ -19,13 +19,15 @@ namespace GunScripts
             AKGunProjectile.transform.localScale += 
                 (AKGunProjectile.transform.localScale*(gam.AKAbilityMultiplier * (gam.AKAbilityHitCount / gam.AKAbilityActivateRate)));
             
+            gunInformation.gunDamage += 
+                (gunInformation.gunDamage*(gam.AKAbilityMultiplier * (gam.AKAbilityHitCount / gam.AKAbilityActivateRate)));
             AKGunProjectile.GetComponent<AKGunProjectile>().GunInformation = gunInformation;
             Vector2 shootingVector = mouseClickInformation.GetPlayerMouseDistance();
             Vector3 shootingVector3 = new Vector3(shootingVector.normalized.x, shootingVector.normalized.y);
 
             GameObject.Find("Panda").GetComponent<Transform>().position += 
                 (-1*shootingVector3 * (gam.AKAbilityMultiplier * (gam.AKAbilityHitCount / gam.AKAbilityActivateRate)));
-            
+
             shootingVector = rotate(shootingVector,
                 (float) (EnemySpawnManager.random.NextDouble() 
                     * (gam.AKProjectileMaxRadian - (-1*gam.AKProjectileMaxRadian)) + (-1*gam.AKProjectileMaxRadian)));
