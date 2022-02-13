@@ -10,9 +10,9 @@ namespace GameManagement
     public class EnemySpawnManager : MonoBehaviour
     {
         public static System.Random random = new System.Random();
-        public static float playerSpawnRange = 2f;
-        public float spawnUpperLimit;
-        public float spawnLowerLimit;
+        public float playerSpawnRange = 2f;
+        public float spawnUpperLimit = 5f;
+        public float spawnLowerLimit = 1f;
 
         public static Dictionary<int, SpawnEvent> SpawnEventList = new Dictionary<int, SpawnEvent>();
         public static int dicKeyIndex = 0;
@@ -24,35 +24,24 @@ namespace GameManagement
 
         private void Update()
         {
-            List<int> removedKeys = new List<int>();
+            List<int> keys = new List<int>();
             
             foreach (KeyValuePair<int, SpawnEvent> keyValuePair in SpawnEventList)
             {
-                int spawnEventKey = keyValuePair.Key;
-                SpawnEventList[spawnEventKey].spawnInfo.spawnBehavior.Spawn(spawnEventKey);
+                keys.Add(keyValuePair.Key);
             }
-            foreach (KeyValuePair<int, SpawnEvent> keyValuePair in SpawnEventList)
+            for (int i = 0; i < keys.Count; i++)
             {
-                int spawnEventKey = keyValuePair.Key;
-                if (SpawnEventList[spawnEventKey].spawnTimer >= SpawnEventList[spawnEventKey].spawnDelay)
-                {
-                    removedKeys.Add(spawnEventKey);
-                }
+                SpawnEventList[keys[i]].spawnInfo.spawnBehavior.Spawn(keys[i]);
             }
-
-            for (int i = 0; i < removedKeys.Count; i++)
-            {
-                SpawnEventList.Remove(removedKeys[i]);
-            }
-            
         }
 
-        public static void SpawnEnemies(SpawnInfo[] spawnInfoArr)
+        public void SpawnEnemies(SpawnInfo[] spawnInfoArr)
         {
             foreach (SpawnInfo curSpawnInfo in spawnInfoArr)
             {
                 SpawnEvent spawnEvent = new SpawnEvent(Vector2.zero, 0f ,curSpawnInfo, 0f, 
-                    playerSpawnRange, 0f, 0f);
+                    playerSpawnRange, spawnLowerLimit, spawnUpperLimit);
                 SpawnEventList.Add(dicKeyIndex, spawnEvent);
                 dicKeyIndex++;
             }

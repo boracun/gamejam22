@@ -13,7 +13,6 @@ namespace Enemy
             Vector2 followVector = (playerVector - enemyVector).normalized;
             Rigidbody2D enemyRigidbody2D = enemyMovementInformation.enemyRigidbody2D;
             enemyRigidbody2D.velocity = followVector * enemyMovementInformation.enemySpeed;
-            Debug.Log(enemyRigidbody2D.velocity.magnitude);
         }
     }
 }

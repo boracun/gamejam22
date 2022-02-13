@@ -12,6 +12,7 @@ namespace GameManagement
         {
             SpawnEvent spawnEvent = EnemySpawnManager.SpawnEventList[spawnEventKey];
             
+            
             if (!eventFinalized)
             {
                 ChooseRandomSpawnTime(ref spawnEvent);
@@ -19,13 +20,20 @@ namespace GameManagement
             }
 
             spawnEvent.spawnTimer += Time.deltaTime;
-
+            
             if (spawnEvent.spawnTimer >= spawnEvent.spawnDelay)
             {
                 ChooseRandomSpawnPoint(ref spawnEvent);
                 
                 GameObject enemy = GameObject.Instantiate(EnemySpawnManager.GetPrefab(spawnEvent.spawnInfo.enemyType), 
                     spawnEvent.spawnLocation, Quaternion.identity);
+
+                EnemySpawnManager.SpawnEventList.Remove(spawnEventKey);
+            }
+            else //Silinebilir
+            {
+                EnemySpawnManager.SpawnEventList.Remove(spawnEventKey);
+                EnemySpawnManager.SpawnEventList.Add(spawnEventKey, spawnEvent);
             }
         }
 
@@ -34,8 +42,8 @@ namespace GameManagement
             float topBorderYPos = GameObject.Find("TopBorder").transform.position.y - 0.5f;
             float bottomBorderYPos = GameObject.Find("BottomBorder").transform.position.y + 0.5f;
             
-            float leftBorderXPos = GameObject.Find("LeftBorder").transform.position.x - 0.5f;
-            float rightBorderXPos = GameObject.Find("RightBorder").transform.position.x + 0.5f;
+            float leftBorderXPos = GameObject.Find("LeftBorder").transform.position.x + 0.5f;
+            float rightBorderXPos = GameObject.Find("RightBorder").transform.position.x - 1.5f;
             
             GameObject player = GameObject.Find("Panda");
             

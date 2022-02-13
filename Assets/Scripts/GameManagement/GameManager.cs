@@ -7,6 +7,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public float time = 0f;
+
+    public float spawnTime;
+
+    public EnemySpawnManager EnemySpawnManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +21,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= 10f)
+        if (time >= spawnTime)
         {
             SpawnInfo[] spawnInfos = new SpawnInfo[4];
             SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), 0f, 0f, 0f);
