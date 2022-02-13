@@ -25,7 +25,9 @@ namespace GunScripts
 
         private bool fired = false;
         private float firedTimer = 0f;
-        
+
+        public float healthIncreaseAmount;
+
         public AudioSource src;
         
 

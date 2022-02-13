@@ -100,6 +100,14 @@ public class HUD : MonoBehaviour
         _em.EvolveFP();
         firepowerButton.interactable = false;
         fireRateButton.interactable = false;
+        if (_gun.gunHealth + _gun.healthIncreaseAmount <= _gun.maxGunHealth)
+        {
+            IncreaseHealth(_gun.healthIncreaseAmount);
+        }
+        else
+        {
+            IncreaseHealth(_gun.maxGunHealth - _gun.gunHealth);
+        }
     }
     
     public void ClickFRButton()
@@ -107,6 +115,14 @@ public class HUD : MonoBehaviour
         _em.EvolveFR();
         firepowerButton.interactable = false;
         fireRateButton.interactable = false;
+        if (_gun.gunHealth + _gun.healthIncreaseAmount <= _gun.maxGunHealth)
+        {
+            IncreaseHealth(_gun.healthIncreaseAmount);
+        }
+        else
+        {
+            IncreaseHealth(_gun.maxGunHealth - _gun.gunHealth);
+        }
     }
 
     public void IncreaseFP(float increaseAmount)

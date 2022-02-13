@@ -30,6 +30,7 @@ namespace GameManagement
                 
                 enemy.GetComponent<EnemyProperties>().health = spawnEvent.spawnInfo.enemyHealth;
                 enemy.GetComponent<EnemyMovement>().enemySpeed = spawnEvent.spawnInfo.enemySpeed;
+                enemy.GetComponent<EnemyProperties>().damage = spawnEvent.spawnInfo.enemyDamage;
 
                 EnemySpawnManager.SpawnEventList.Remove(spawnEventKey);
             }

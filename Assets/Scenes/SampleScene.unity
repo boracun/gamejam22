@@ -354,10 +354,12 @@ MonoBehaviour:
   time: 0
   spawnTime: 4
   Gun: {fileID: 1599921332}
-  enemyHealthSpawn: 200
-  healthMultiplier: 0.4
+  enemyHealthSpawn: 100
+  healthMultiplier: 0.1
   enemySpeedSpawn: 1
   speedMultiplier: 0.1
+  enemyDamageSpawn: 20
+  damageMultiplier: 0.1
   EnemySpawnManager: {fileID: 23383621}
 --- !u!114 &23383621
 MonoBehaviour:
@@ -421,8 +423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f788557b10467391dfc0c3580a86a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  evolveIncreaseAmount: 10
-  evolveTreshHold: 1
+  evolveIncreaseAmount: 20
+  evolveTreshHold: 5
   ShotgunSprite: {fileID: 8363546646716079569, guid: 4f0914d548076144bada359c37d3985c, type: 3}
   UziSprite: {fileID: 21300000, guid: c45266bc44cf1e244a9c72afc7ee05d2, type: 3}
   AKSprite: {fileID: 0}
@@ -2665,13 +2667,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunHealth: 200
   maxGunHealth: 200
-  gunDamage: 50
+  gunDamage: 35
   gunFireRate: 120
   bulletSpeed: 10
   evolutionPoints: 0
   gunEvoFPPoints: 0
   gunEvoFRPoints: 0
   camera: {fileID: 519420031}
+  healthIncreaseAmount: 0
   src: {fileID: 0}
 --- !u!82 &1599921333
 AudioSource:
