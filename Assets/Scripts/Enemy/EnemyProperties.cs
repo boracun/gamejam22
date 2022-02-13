@@ -8,6 +8,8 @@ namespace Enemy
         public float health;
         public float damage;
         public float attackCooldown;
+        public float attackTimer;
+        public float rewardEvoPoints;
         public EnemyType enemyType;
 
         public IEnemyDamageTakeBehavior EnemyDamageTakeBehavior;
@@ -28,6 +30,7 @@ namespace Enemy
 
         public void Update()
         {
+            attackTimer += Time.deltaTime;
         }
 
         public void TakeDamage(float damageTaken)
@@ -37,12 +40,17 @@ namespace Enemy
 
         public void EnemyDie()
         {
+            HUD.Instance.IncreaseEvolutionPoints(rewardEvoPoints);
             EnemyDeathBehavior.Die(gameObject);
         }
 
         public void AttackPlayer(EnemyAttackInformation enemyAttackInformation)
         {
-            EnemyAttackBehavior.AttackPlayer(enemyAttackInformation);
+            if (attackTimer >= attackCooldown)
+            {
+                attackTimer = 0f;
+                EnemyAttackBehavior.AttackPlayer(enemyAttackInformation);
+            }
         }
 
         private void OnCollisionEnter2D(Collision2D other)
