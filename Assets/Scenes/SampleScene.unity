@@ -1977,7 +1977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83f73fade30f47b4e83572ffef552e8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunHealth: 0
+  gunHealth: 200
+  maxGunHealth: 200
   gunDamage: 50
   gunFireRate: 120
   bulletSpeed: 10

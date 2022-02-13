@@ -6,6 +6,7 @@ namespace GunScripts
     public class Gun : MonoBehaviour
     {
         public float gunHealth;
+        public float maxGunHealth;
         public float gunDamage;
         public float gunFireRate;
         public float bulletSpeed;
