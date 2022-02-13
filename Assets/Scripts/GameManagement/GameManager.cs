@@ -29,8 +29,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float enemyHealth = CalculateMultiplier() * enemyHealthSpawn;
-        float enemySpeed = CalculateSpeedMultiplier() * enemySpeedSpawn;
+        float enemyHealth = CalculateMultiplier() * enemyHealthSpawn + enemyHealthSpawn;
+        float enemySpeed = CalculateSpeedMultiplier() * enemySpeedSpawn + enemySpeedSpawn;
         waveLength += Time.deltaTime;
         time += Time.deltaTime;
 
