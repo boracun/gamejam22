@@ -9,17 +9,19 @@ public class GameManager : MonoBehaviour
     public float time = 0f;
 
     public float spawnTime;
+    private float waveLength;
 
     public EnemySpawnManager EnemySpawnManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        waveLength = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        waveLength += Time.deltaTime;
         time += Time.deltaTime;
         if (time >= spawnTime)
         {

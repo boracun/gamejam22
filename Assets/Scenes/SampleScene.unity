@@ -334,8 +334,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f788557b10467391dfc0c3580a86a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabNormal: {fileID: 0}
-  prefabShotgun: {fileID: 0}
   evolveIncreaseAmount: 10
   evolveTreshHold: 2
   ShotgunSprite: {fileID: 8363546646716079569, guid: 4f0914d548076144bada359c37d3985c, type: 3}
