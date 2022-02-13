@@ -2268,14 +2268,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\tIn Evolution Arena, the last living red panda -Peter Panda got attack
-    by his enemy, the Owl Clan. Only his organic based, symbiote gun friend Rico
-    can help Peter Panda.\n\n\tRico can consume Owl Clan's flesh after they are defeated.
+  m_text: "\tIn Evolution Arena, the last living red panda -Peter Panda got attacked
+    by his enemy, the Owl Clan. Only his carbon based, symbiote gun friend Rico can
+    help Peter Panda.\n\n\tRico can consume Owl Clan's flesh after they are defeated.
     By consuming Owl flesh, Rico collects their DNAs and gathers evolution points.
-    When its reached to 100 points, one of the Rico's abilities can evolve and Rico
-    becomes stronger. After a couple of evolution, Rico realizes its own nature and
-    performs a supreme evolution.\n\n\tPeter Panda and Rico needs to survive. Please
-    help them!!"
+    When it reaches 100 points, one of the Rico's abilities can evolve and Rico becomes
+    stronger. After a couple of evolutions, Rico realizes its own nature and performs
+    a supreme evolution.\n\n\tPeter Panda and Rico needs to survive. Please help
+    them!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
