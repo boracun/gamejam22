@@ -11,14 +11,16 @@ namespace GunScripts
 
         public Transform GunTransform;
         public AudioSource src;
+        
 
-        public GunInformation(float gunDamage, float gunFireRate, float bulletSpeed, Transform gunTransform, AudioSource src)
+        public GunInformation(float gunDamage, float gunFireRate, float bulletSpeed, 
+            Transform gunTransform, AudioSource src)
         {
             this.gunDamage = gunDamage;
             this.gunFireRate = gunFireRate;
             this.bulletSpeed = bulletSpeed;
             GunTransform = gunTransform;
-            this.src = src; 
+            this.src = src;
         }
     
     }

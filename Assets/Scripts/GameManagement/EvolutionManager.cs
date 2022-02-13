@@ -25,6 +25,9 @@ public class EvolutionManager : MonoBehaviour
 
     public float shotgunDamageBoost;
     public float shotgunFireRatePunishment;
+    
+    public float uziDamagePunishment;
+    public float uziFireRateBoost;
 
     
 
@@ -72,7 +75,7 @@ public class EvolutionManager : MonoBehaviour
         }
         else if (Gun.gunEvoFRPoints == evolveTreshHold)
         {
-            
+            EvolveToUzi();
         }
     }
 
@@ -85,6 +88,18 @@ public class EvolutionManager : MonoBehaviour
         Animator animator = gunModel.GetComponent<Animator>();
         animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Shotgun/Shotgun") as RuntimeAnimatorController;
         gunModel.GetComponent<SpriteRenderer>().sprite = ShotgunSprite;
+
+    }
+    
+    private void EvolveToUzi()
+    {
+        Gun.GunState = new UziGun();
+        Gun.gunDamage -= uziDamagePunishment;
+        Gun.gunFireRate += uziFireRateBoost;
+
+        Animator animator = gunModel.GetComponent<Animator>();
+        animator.runtimeAnimatorController = Resources.Load("Animations/Guns/Uzi/Uzi") as RuntimeAnimatorController;
+        gunModel.GetComponent<SpriteRenderer>().sprite = UziSprite;
 
     }
 }

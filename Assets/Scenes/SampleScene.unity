@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 23383620}
   - component: {fileID: 23383623}
   - component: {fileID: 23383624}
+  - component: {fileID: 23383625}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -334,8 +335,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95f788557b10467391dfc0c3580a86a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabNormal: {fileID: 0}
-  prefabShotgun: {fileID: 0}
   evolveIncreaseAmount: 10
   evolveTreshHold: 2
   ShotgunSprite: {fileID: 8363546646716079569, guid: 4f0914d548076144bada359c37d3985c, type: 3}
@@ -345,6 +344,22 @@ MonoBehaviour:
   Gun: {fileID: 1599921332}
   shotgunDamageBoost: 0
   shotgunFireRatePunishment: 0
+--- !u!114 &23383625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23383619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49cc92385cd4fdfb38a0b5ce901cd04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uziPowerTimer: 0
+  uziPowerCooldown: 5
+  uziPowerAbilityTime: 5
+  gunAbilityFireRateBonus: 1
 --- !u!1 &125745121
 GameObject:
   m_ObjectHideFlags: 0

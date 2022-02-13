@@ -1,4 +1,5 @@
 using System;
+using GameManagement;
 using UnityEngine;
 
 namespace GunScripts
@@ -25,6 +26,7 @@ namespace GunScripts
         private float firedTimer = 0f;
         
         public AudioSource src;
+        
 
         // Start is called before the first frame update
         void Start()
@@ -40,7 +42,7 @@ namespace GunScripts
             {
                 firedTimer += Time.deltaTime;
 
-                float firePerSecond = 60 / gunFireRate;
+                float firePerSecond = 60 / (gunFireRate * GAM.Instance.gunAbilityFireRateBonus);
 
                 if (firedTimer >= firePerSecond)
                 {
