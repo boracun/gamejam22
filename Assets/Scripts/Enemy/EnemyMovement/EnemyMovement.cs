@@ -16,7 +16,7 @@ namespace Enemy
         // Update is called once per frame
         void Update()
         {
-            MovingPattern.Move(new EnemyMovementInformation(gameObject.transform, enemySpeed, gameObject.GetComponent<Rigidbody2D>()));
+            MovingPattern.Move(new EnemyMovementInformation(gameObject.transform, enemySpeed, gameObject.GetComponent<Rigidbody2D>(), gameObject.GetComponent<SpriteRenderer>()));
         
         }
     }
