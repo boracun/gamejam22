@@ -78,17 +78,17 @@ public class EvolutionManager : MonoBehaviour
 
     public void EvolveGun()
     {
-        if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints == evolveTreshHold && !isAK)
+        if (Gun.gunEvoFPPoints >= evolveTreshHold && Gun.gunEvoFRPoints >= evolveTreshHold && !isAK)
         {
             isAK = true;
             EvolveToAK();
         }
-        else if (Gun.gunEvoFPPoints == evolveTreshHold && !isShotgun && !isAK && !isUzi)
+        else if (Gun.gunEvoFPPoints >= evolveTreshHold && !isShotgun && !isAK && !isUzi)
         {
             isShotgun = true;
             EvolveToShotgun();
         }
-        else if (Gun.gunEvoFRPoints == evolveTreshHold && !isShotgun && !isAK && !isUzi)
+        else if (Gun.gunEvoFRPoints >= evolveTreshHold && !isShotgun && !isAK && !isUzi)
         {
             isUzi = true;
             EvolveToUzi();

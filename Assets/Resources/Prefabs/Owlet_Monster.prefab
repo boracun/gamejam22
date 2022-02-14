@@ -122,7 +122,7 @@ MonoBehaviour:
   damage: 50
   attackCooldown: 5
   attackTimer: 2
-  rewardEvoPoints: 20
+  rewardEvoPoints: 25
   enemyType: 0
 --- !u!114 &909206596086563164
 MonoBehaviour:
