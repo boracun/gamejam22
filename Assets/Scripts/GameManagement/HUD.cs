@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using GunScripts;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,7 +37,7 @@ public class HUD : MonoBehaviour
 
     private Gun _gun;
     private EvolutionManager _em;
-    private float _score = 0;
+    public static float _score = 0;
 
     private void Awake()
     {
@@ -173,5 +174,10 @@ public class HUD : MonoBehaviour
     {
         _score += points;
         scoreText.text = _score.ToString();
+    }
+
+    public static float GetScore()
+    {
+        return _score;
     }
 }
