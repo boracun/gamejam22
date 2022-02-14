@@ -66,15 +66,17 @@ public class GameManager : MonoBehaviour
         {
             if (time >= spawnTime)
             {
-                SpawnInfo[] spawnInfos = new SpawnInfo[4];
+                SpawnInfo[] spawnInfos = new SpawnInfo[5];
                 SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
+                SpawnInfo spawnInfo5 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 spawnInfos[0] = spawnInfo;
                 spawnInfos[1] = spawnInfo2;
                 spawnInfos[2] = spawnInfo3;
                 spawnInfos[3] = spawnInfo4;
+                spawnInfos[4] = spawnInfo5;
 
                 EnemySpawnManager.SpawnEnemies(spawnInfos);
                 time = 0f;
@@ -88,15 +90,17 @@ public class GameManager : MonoBehaviour
         {
             if (time >= spawnTime)
             {
-                SpawnInfo[] spawnInfos = new SpawnInfo[4];
+                SpawnInfo[] spawnInfos = new SpawnInfo[5];
                 SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
+                SpawnInfo spawnInfo5 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 spawnInfos[0] = spawnInfo;
                 spawnInfos[1] = spawnInfo2;
                 spawnInfos[2] = spawnInfo3;
                 spawnInfos[3] = spawnInfo4;
+                spawnInfos[4] = spawnInfo5;
 
                 EnemySpawnManager.SpawnEnemies(spawnInfos);
                 time = 0f;
@@ -110,15 +114,19 @@ public class GameManager : MonoBehaviour
         {
             if (time >= spawnTime)
             {
-                SpawnInfo[] spawnInfos = new SpawnInfo[4];
+                SpawnInfo[] spawnInfos = new SpawnInfo[6];
                 SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
+                SpawnInfo spawnInfo5 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
+                SpawnInfo spawnInfo6 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 spawnInfos[0] = spawnInfo;
                 spawnInfos[1] = spawnInfo2;
                 spawnInfos[2] = spawnInfo3;
                 spawnInfos[3] = spawnInfo4;
+                spawnInfos[4] = spawnInfo5;
+                spawnInfos[5] = spawnInfo6;
 
                 EnemySpawnManager.SpawnEnemies(spawnInfos);
                 time = 0f;
@@ -132,15 +140,21 @@ public class GameManager : MonoBehaviour
         {
             if (time >= spawnTime)
             {
-                SpawnInfo[] spawnInfos = new SpawnInfo[4];
+                SpawnInfo[] spawnInfos = new SpawnInfo[7];
                 SpawnInfo spawnInfo = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo2 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo3 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 SpawnInfo spawnInfo4 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
+                SpawnInfo spawnInfo5 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
+                SpawnInfo spawnInfo6 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
+                SpawnInfo spawnInfo7 = new SpawnInfo(EnemyType.NormalEnemy, new RandomSpawn(), enemyHealth, enemyDamage, enemySpeed);
                 spawnInfos[0] = spawnInfo;
                 spawnInfos[1] = spawnInfo2;
                 spawnInfos[2] = spawnInfo3;
                 spawnInfos[3] = spawnInfo4;
+                spawnInfos[4] = spawnInfo5;
+                spawnInfos[5] = spawnInfo6;
+                spawnInfos[6] = spawnInfo7;
 
                 EnemySpawnManager.SpawnEnemies(spawnInfos);
                 time = 0f;
