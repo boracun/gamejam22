@@ -1,6 +1,6 @@
 using System;
 using GunScripts;
-using UnityEditor.Animations;
+//using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
@@ -21,7 +21,7 @@ public class EvolutionManager : MonoBehaviour
 
     public GameObject gunModel;
 
-    public AnimatorController ShotgunAnimation;
+    //public AnimatorController ShotgunAnimation;
     public Gun Gun;
     
     public float shotgunDamageBoost;

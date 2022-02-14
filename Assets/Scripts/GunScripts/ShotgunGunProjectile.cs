@@ -31,10 +31,8 @@ namespace GunScripts
             {
                 other.gameObject.GetComponent<EnemyProperties>().TakeDamage(GunInformation.gunDamage);
                 Vector2 shootingVector = MouseClickInformation.GetPlayerMouseDistance().normalized;
-                Debug.Log(shootingVector);
                 Vector3 shootingVector3 = new Vector3(shootingVector.x, shootingVector.y, 0);
                 other.gameObject.transform.position += shootingVector3 * shotgunKnockback;
-                Debug.Log(shootingVector3);
                 Destroy(gameObject);
             }
 
