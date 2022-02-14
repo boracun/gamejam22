@@ -13,9 +13,9 @@ public class PandaSpeech : MonoBehaviour
         "Upgrade firepower to get powerful guns",
         "Upgrade fire rate to get faster guns",
         "I trust you!",
-        "If you wait 5 seconds without shooting fast gun, it gets faster",
+        "If you wait 2 seconds without shooting fast gun, it gets faster",
         "5 accurate shots with the machine gun gives bigger bullets",
-        "Your health regenerates in every x score",
+        "Your health regenerates in every evolution upgrade",
     };
     
     // Start is called before the first frame update
