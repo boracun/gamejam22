@@ -354,7 +354,7 @@ MonoBehaviour:
   time: 0
   spawnTime: 4
   Gun: {fileID: 1599921332}
-  enemyHealthSpawn: 100
+  enemyHealthSpawn: 90
   healthMultiplier: 0.1
   enemySpeedSpawn: 1
   speedMultiplier: 0.08
@@ -436,7 +436,7 @@ MonoBehaviour:
   shotgunFireRatePunishment: 80
   uziDamagePunishment: 10
   uziFireRateBoost: 200
-  AKDamageBonus: 45
+  AKDamageBonus: 55
   AKFireRateBonus: 23
   defaultGunImage: {fileID: 1765321682}
   shotgunImage: {fileID: 612528779}
