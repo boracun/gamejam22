@@ -24,9 +24,9 @@ namespace GunScripts
             AKGunProjectile.GetComponent<AKGunProjectile>().GunInformation = gunInformation;
             Vector2 shootingVector = mouseClickInformation.GetPlayerMouseDistance();
             Vector3 shootingVector3 = new Vector3(shootingVector.normalized.x, shootingVector.normalized.y);
-
+            
             GameObject.Find("Panda").GetComponent<Transform>().position += 
-                (-1*shootingVector3 * (gam.AKAbilityMultiplier * (gam.AKAbilityHitCount / gam.AKAbilityActivateRate)));
+                (-0.8f*shootingVector3 * (gam.AKAbilityMultiplier * (gam.AKAbilityHitCount / gam.AKAbilityActivateRate)));
 
             shootingVector = rotate(shootingVector,
                 (float) (EnemySpawnManager.random.NextDouble() 
