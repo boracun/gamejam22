@@ -432,12 +432,12 @@ MonoBehaviour:
   gunModel: {fileID: 1057495602}
   ShotgunAnimation: {fileID: 0}
   Gun: {fileID: 1599921332}
-  shotgunDamageBoost: 12
+  shotgunDamageBoost: 10
   shotgunFireRatePunishment: 80
   uziDamagePunishment: 10
-  uziFireRateBoost: 200
-  AKDamageBonus: 55
-  AKFireRateBonus: 23
+  uziFireRateBoost: 160
+  AKDamageBonus: 25
+  AKFireRateBonus: 25
   defaultGunImage: {fileID: 1765321682}
   shotgunImage: {fileID: 612528779}
   uziImage: {fileID: 2064718066}
@@ -458,12 +458,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uziPowerTimer: 0
-  uziPowerCooldown: 5
-  uziPowerAbilityTime: 2
+  uziPowerCooldown: 2
+  uziPowerAbilityTime: 3.5
   gunAbilityFireRateBonus: 1
-  AKProjectileMaxRadian: 0.3
+  AKProjectileMaxRadian: 0.25
   AKAbilityHitCount: 0
-  AKAbilityMultiplier: 0.1
+  AKAbilityMultiplier: 0.12
   AKAbilityActivateRate: 5
 --- !u!114 &23383626
 MonoBehaviour:

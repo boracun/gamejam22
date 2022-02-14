@@ -1,4 +1,5 @@
 using System;
+using GameManagement;
 using GunScripts;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -80,11 +81,13 @@ public class EvolutionManager : MonoBehaviour
     {
         if (Gun.gunEvoFPPoints >= evolveTreshHold && Gun.gunEvoFRPoints >= evolveTreshHold && !isAK)
         {
+            GAM.Instance.gunAbilityFireRateBonus = 1f;
             isAK = true;
             EvolveToAK();
         }
         else if (Gun.gunEvoFPPoints >= evolveTreshHold && !isShotgun && !isAK && !isUzi)
         {
+            GAM.Instance.gunAbilityFireRateBonus = 1f;
             isShotgun = true;
             EvolveToShotgun();
         }
@@ -130,6 +133,16 @@ public class EvolutionManager : MonoBehaviour
     private void EvolveToAK()
     {
         Gun.GunState = new AKGun();
+        if (isShotgun)
+        {
+            Gun.gunDamage -= shotgunDamageBoost;
+            Gun.gunFireRate += shotgunFireRatePunishment;
+        }
+        if (isUzi)
+        {
+            Gun.gunDamage += uziDamagePunishment;
+            Gun.gunFireRate -= uziFireRateBoost;
+        }
         Gun.gunDamage += AKDamageBonus;
         Gun.gunFireRate += AKFireRateBonus;
 
