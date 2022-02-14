@@ -40,6 +40,10 @@ public class EvolutionManager : MonoBehaviour
     public GameObject uziImage;
     public GameObject akImage;
 
+    public bool isAK;
+    public bool isUzi;
+    public bool isShotgun;
+
     private void Update()
     {
         if (Gun.evolutionPoints >= Gun.MAX_EVOLUTION_POINTS)
@@ -74,16 +78,19 @@ public class EvolutionManager : MonoBehaviour
 
     public void EvolveGun()
     {
-        if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints == evolveTreshHold)
+        if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints == evolveTreshHold && !isAK)
         {
+            isAK = true;
             EvolveToAK();
         }
-        else if (Gun.gunEvoFPPoints == evolveTreshHold && Gun.gunEvoFRPoints < evolveTreshHold)
+        else if (Gun.gunEvoFPPoints == evolveTreshHold && !isShotgun && !isAK && !isUzi)
         {
+            isShotgun = true;
             EvolveToShotgun();
         }
-        else if (Gun.gunEvoFRPoints == evolveTreshHold && Gun.gunEvoFPPoints < evolveTreshHold)
+        else if (Gun.gunEvoFRPoints == evolveTreshHold && !isShotgun && !isAK && !isUzi)
         {
+            isUzi = true;
             EvolveToUzi();
         }
     }
